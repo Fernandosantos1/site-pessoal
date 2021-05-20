@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be Fit</title>
+    <link rel="stylesheet" href="main.js">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <header id="id_navbar">
+        <div class="container">
+            <h1>Fitness</h1>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Contato</a></li>
+                <li><a href="">Sobre Mim</a></li>
+                <li><a href="">Login</a></li>
+            </ul>
+        </div>
+    </header>
+    <section class="home">
+        <div class="container">
+            <h1>a importancia do exercício</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non illum aliquam aperiam atque repudiandae laboriosam odit, ipsam modi iusto nisi consectetur! Blanditiis maiores quo earum aperiam expedita voluptas illum fugiat?</p>
+            <button>Saber Mais</button>
+        </div>
+    </section>
+    <section class="benefits" id="benefits">
+        <button onclick="prev()" class="btn_left"> < </button>
+        <button onclick="next()" class="btn_right"> > </button>
+
+
+
+        <div class="container">
+            <h1 id="title">Teste</h1>
+
+            <img id="bg_img" src="imgs/fit2.png" alt="">
+
+            <div class="box-itens left">
+                <p id="box_1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur ratione et possimus minima soluta impedit.</p>
+                <img id="img_1" src="imgs/Icons/Body/weight-loss.svg" alt="">
+            </div>
+            <div class="box-itens right">
+                <img id="img_2" src="imgs/Icons/Body/muscle.svg" alt="">
+                <p id="box_2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur ratione et possimus minima soluta impedit.</p>
+            </div>
+            <div class="box-itens left">
+                <p id="box_3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur ratione et possimus minima soluta impedit.</p>
+                <img id="img_3" src="imgs/Icons/Body/smartphone.svg" alt="">
+            </div>
+            <div class="box-itens right">
+                <img id="img_4" src="imgs/Icons/Body/sleeping.svg" alt="">
+                <p id="box_4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur ratione et possimus minima soluta impedit.</p>
+            </div>
+        </div>
+    </section>
+    <section class="sobre-mim">
+        <div class="container">
+            <h1>Sobre Mim</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, asperiores? Non vitae perferendis provident repudiandae illum debitis iure. Vel repudiandae architecto laboriosam optio praesentium quo quae placeat libero, iure et error impeconsequatu
+                asperiores reprehenderit hic dolores pariatur ab. Iste quidem porro ad facilis rerum quaerat voluptatem sint ipsa.</p>
+        </div>
+    </section>
+    <section class="wrapper">
+        <div class="container">
+            <div class="title">
+                <h1>Porcentagem</h1>
+            </div>
+            <!-- <div class="year">
+                <h2 onclick="year_2018()">2018</h2>
+                <h2 onclick="year_2019()">2019</h2>
+                <h2 onclick="year_2020()">2020</h2>
+            </div> -->
+            <div class="chart-wrapper">
+                <canvas id="myChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <section class="imc-calculator">
+        <div class="container">
+            <h1> Teste</h1>
+            <div class="box-calculator">
+                <div id="alert_box"></div>
+                <div><input id="in_height" type="number" placeholder="Insira sua altura"></div>
+                <div><input id="in_weight" type="number" placeholder="Insira seu peso"></div>
+
+                <button onclick="calculate()">></button><span id="imc_result"></span>
+
+            </div>
+            <div class="chart-wrapper-2">
+                <canvas id="myChart2"></canvas>
+            </div>
+        </div>
+    </section>
+    <section class="biotypes">
+        <div class="container">
+            <h1> Teste</h1>
+            <div class="biotypes-box">
+                <img src="imgs/Icons/Diet/boiled-egg.svg">
+                <h2>Teste</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate possimus amet, ex blanditiis saepe </p>
+            </div>
+            <div class="biotypes-box">
+                <img src="imgs/Icons/Diet/boiled-egg.svg">
+                <h2>Teste</h2>
+                <p>Quidem facilis libero ipsam? Itaque cum dignissimos velit dolor cumque dolore ullam quasi magnam. Fugiat</p>
+            </div>
+            <div class="biotypes-box">
+                <img src="imgs/Icons/Diet/boiled-egg.svg">
+                <h2>Teste</h2>
+                <p>Dolorum quas iure dolores illum blanditiis quisquam eum suscipit explicabo maxime, voluptas accusantium </p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <h2>Projeto Pessoal de Fernando Marques dos Santos</h2>
+            <p>RA:01211040</p>
+            <a href="https://github.com/Fernandosantos1"><i class="fab fa-github-square"></i></a>
+            <a href="https://www.linkedin.com/in/fernando-santos-25b20020b/"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+
+</body>
+
+</html>

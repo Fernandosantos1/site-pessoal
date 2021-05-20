@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Source+Serif+Pro&display=swap');
+:root {
+    --cor-bg-principal: #fbfbfb;
+    --cor-bg-neutral: #4169e1;
+    --cor-bg-dark: #000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: 'Archivo Black', sans-serif;
+}
+
+body {
+    font-family: 'Source Serif Pro', serif;
+}
+
+.container {
+    margin: auto;
+    width: 80%;
+}
+
+header {
+    background-color: var(--cor-bg-principal);
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    text-transform: uppercase;
+    z-index: 5 !important;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+a {
+    text-decoration: none;
+    color: var(--cor-bg-dark);
+}
+
+li {
+    display: inline-block;
+    padding: 1em;
+}
+
+li :hover {
+    font-weight: 600;
+}
+
+.home {
+    background-image: url(imgs/scott-webb-gWerBZuKM9c-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0 0 7.5em 0;
+}
+
+.home .container h1 {
+    padding: 4em 0 0 0;
+    color: white;
+    text-transform: uppercase;
+    font-size: 5em;
+    width: 70%;
+}
+
+.home .container p {
+    color: white;
+    width: 80%;
+    font-size: 2em;
+    padding: 2em;
+}
+
+@media screen and (max-width: 1280px) {
+     :root {
+        font-size: 12px;
+    }
+}
+
+.home .container button {
+    color: white;
+    font-size: 1.4em;
+    background-color: var(--cor-bg-neutral);
+    padding: 1em 3em 1em 3em;
+    border-style: none;
+    border-radius: 3px;
+}
+
+.home .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 60%;
+    padding-right: 30%;
+}
+
+.benefits {
+    position: relative;
+}
+
+.benefits .container .box-itens {
+    display: flex;
+    flex-flow: row wrap;
+    width: 50%;
+    margin: 10rem 0 10rem 0;
+}
+
+.benefits .container .box-itens p {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+}
+
+.benefits .container img {
+    width: 15%;
+    padding: 1rem;
+}
+
+.benefits .container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.benefits .container h1 {
+    position: absolute;
+    left: 1%;
+    right: 1%;
+    top: 2rem;
+    font-size: 3em;
+    text-align: center;
+}
+
+.right {
+    justify-content: flex-end;
+}
+
+.left {
+    justify-content: flex-start;
+}
+
+.benefits button {
+    position: absolute;
+    color: white;
+    font-size: 1.4em;
+    background-color: var(--cor-bg-neutral);
+    padding: 2em 1em 2em 1em;
+    border-style: none;
+    border-radius: 3px;
+}
+
+.btn_right {
+    right: 0;
+    bottom: 40%;
+}
+
+.btn_left {
+    left: 0;
+    bottom: 40%;
+}
+
+#bg_img {
+    padding: 0;
+    position: absolute;
+    z-index: -5 !important;
+    bottom: 0;
+    text-align: center;
+    width: 80%;
+}
+
+.sobre-mim {
+    background-image: url(imgs/fundoeu.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    position: relative;
+}
+
+.sobre-mim .container {
+    font-size: 2em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20rem 0 15rem 0;
+}
+
+.sobre-mim .container h1 {
+    position: absolute;
+    left: 1%;
+    right: 1%;
+    top: 2rem;
+    text-align: center;
+}
+
+.sobre-mim .container p {
+    width: 60%;
+    font-size: 1.1em;
+}
+
+.wrapper {
+    position: relative;
+    background-image: url(imgs/fundo2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.wrapper .container {
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.wrapper .container h1 {
+    position: absolute;
+    left: 1%;
+    right: 1%;
+    top: 2rem;
+    text-align: center;
+}
+
+.chart-wrapper {
+    width: 30em;
+    padding: 12rem 0 14rem 0;
+}
+
+.imc-calculator {
+    position: relative;
+    /* background-image: url(imgs/fundo2.jpg); */
+    background-color: var(--cor-bg-dark);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 800px;
+    color: var(--cor-bg-principal);
+}
+
+.imc-calculator .container {
+    font-size: 2em;
+    display: flex;
+    flex-flow: row;
+}
+
+.imc-calculator .container h1 {
+    position: absolute;
+    left: 1%;
+    right: 1%;
+    top: 2rem;
+    text-align: center;
+}
+
+.chart-wrapper-2 {
+    width: 30em;
+}
+
+.box-calculator {
+    /* dps eu vejo */
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+}
+
+.box-calculator input {
+    font-size: 2rem;
+    padding: .5rem 1.5rem;
+    border-style: none;
+    border-radius: 4px;
+    margin: .1em;
+}
+
+.box-calculator button {
+    color: var(--cor-bg-principal);
+    font-size: 2rem;
+    margin: 0.2rem;
+    padding: 1em 1em;
+    border-style: none;
+    border-radius: 2px;
+    background-color: var(--cor-bg-neutral);
+}
+
+.biotypes {
+    position: relative;
+    background-image: url();
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.biotypes .container {
+    font-size: 2em;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: space-around;
+}
+
+.biotypes .container h1 {
+    position: absolute;
+    left: 1%;
+    right: 1%;
+    top: 2rem;
+    text-align: center;
+}
+
+.biotypes-box {
+    text-align: center;
+    width: 30%;
+    margin: auto;
+    padding: 19rem 0 9rem 0;
+}
+
+.biotypes-box img {
+    width: 40%;
+}
+
+.biotypes-box h2 {
+    padding: 1rem;
+}
+
+footer {
+    border-top: 2px solid black;
+    background-color: var(--cor-bg-principal);
+    font-size: .9em;
+}
+
+footer .container {
+    text-align: center;
+}
+
+footer .container p {
+    margin: .5em;
+}
+
+footer .container h2 {
+    margin: .5em;
+}
+
+footer .container i {
+    font-size: 6em;
+    padding: 0 .1em 0 .1em;
+}
+
+footer .container i:hover {
+    color: var(--cor-bg-neutral);
+}
