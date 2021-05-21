@@ -206,7 +206,7 @@ let meuGrafico = new Chart(ctx, {
 
             fontSize: 20,
 
-            text: "Meus Evolução",
+            text: "Minha Evolução",
 
             position: 'top',
         },
@@ -238,26 +238,51 @@ let ctx2 = document.getElementById('myChart2').getContext('2d');
 let myChart = new Chart(ctx2, {
     type: 'pie',
     data: {
-        labels: ['Massa Muscular', 'Gordura', 'Outros'],
+        labels: ['Saudável', 'Abaixo do Peso', 'Obeso','Obesidade Grave'],
         datasets: [{
-            data: [60, 25, 10],
+            data: [47, 33, 13,7],
             backgroundColor: [
                 'rgba(54, 133, 235, 0.6)',
+                'rgba(75, 192, 192, 0.6)',
                 'rgba(255, 206, 86, 0.6)',
-                'rgba(75, 192, 192, 0.6)'
+                'rgba(255, 80, 80, 0.6)'
             ],
             borderColor: [
                 'rgba(54, 162, 235, 1)',
+                'rgba(75, 192, 192, 1)',
                 'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)'
+                'rgba(255, 80, 80, 1)'
             ],
+            
             borderWidth: 4
         }]
     },
     options: {
+        title: {
+
+            display: true,
+
+            fontSize: 20,
+
+            text: "Taxa de Obesidade",
+
+            position: 'top',
+
+            fontColor: "#fff"
+        },
+        
+        legend:{
+            
+            position: 'bottom',
+            labels:{
+                fontColor: "#fff"
+            }
+        }
+,
         scales: {
             y: {
-                beginAtZero: true
+                beginAtZero: true,
+                
             }
         }
     }
@@ -326,8 +351,23 @@ calculate = () => {
 
     } else {
 
-        imc_result.innerHTML = imc
+        if (imc <= 18.5) {
+            imc_result.innerHTML = `${imc}, Você está abaixo do peso isso não é saudável`;
 
+        } else if (imc <= 25){
+
+            imc_result.innerHTML = `${imc}, Você está saudável, parabéns`;
+
+        } else if (imc <= 30){
+
+            imc_result.innerHTML = `${imc}, Você está obeso isso não é saudável`; 
+
+        } else {
+
+            imc_result.innerHTML = `${imc}, Você está com obesidade grave isso não é saudável, tome cuidado`;
+
+        }
+                
     }
-
 }
+

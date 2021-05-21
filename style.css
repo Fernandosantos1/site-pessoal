@@ -3,6 +3,7 @@
     --cor-bg-principal: #fbfbfb;
     --cor-bg-neutral: #4169e1;
     --cor-bg-dark: #000;
+    --cor-bg-alert: rgb(236, 131, 32);
 }
 
 * {
@@ -64,7 +65,7 @@ li :hover {
     color: white;
     text-transform: uppercase;
     font-size: 5em;
-    width: 70%;
+    width: 75%;
 }
 
 .home .container p {
@@ -226,16 +227,14 @@ li :hover {
 
 .chart-wrapper {
     width: 30em;
-    padding: 12rem 0 14rem 0;
+    padding: 10rem 0 12rem 0;
 }
 
 .imc-calculator {
     position: relative;
-    /* background-image: url(imgs/fundo2.jpg); */
-    background-color: var(--cor-bg-dark);
+    background-image: url(imgs/fundo5.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 800px;
     color: var(--cor-bg-principal);
 }
 
@@ -243,6 +242,7 @@ li :hover {
     font-size: 2em;
     display: flex;
     flex-flow: row;
+    padding: 7.5em 0 7.5em 0;
 }
 
 .imc-calculator .container h1 {
@@ -255,6 +255,29 @@ li :hover {
 
 .chart-wrapper-2 {
     width: 30em;
+}
+
+#alert_box,
+#imc_result {
+    position: absolute;
+}
+
+#imc_result {
+    top: 19.5em;
+    bottom: 1%;
+    right: 66%;
+    left: 10%;
+    color: var(--cor-bg-principal);
+    font-weight: bolder;
+}
+
+#alert_box {
+    top: 9.5em;
+    bottom: 19em;
+    right: 60%;
+    left: 10%;
+    color: var(--cor-bg-alert);
+    font-weight: bolder;
 }
 
 .box-calculator {
@@ -317,6 +340,44 @@ li :hover {
 
 .biotypes-box h2 {
     padding: 1rem;
+}
+
+.dashboard {
+    position: relative;
+    display: flex;
+}
+
+.table-dash {
+    background: chartreuse;
+}
+
+.table-row {
+    padding: 2em;
+}
+
+.table-column {
+    border-right: 2px solid black;
+    display: flex;
+    flex-flow: column;
+    padding: 0 0 30.686em 0;
+}
+
+.dashboard i {
+    font-size: 3em;
+    position: absolute;
+    bottom: 0;
+    margin: 1em;
+}
+
+.dashboard i:hover {
+    color: var(--cor-bg-neutral);
+}
+
+.dash-bar {
+    position: fixed;
+    border: 1px solid black;
+    height: 100px;
+    width: 100%;
 }
 
 footer {
