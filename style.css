@@ -227,7 +227,7 @@ li :hover {
 
 .chart-wrapper {
     width: 30em;
-    padding: 10rem 0 12rem 0;
+    padding: 11rem 0 14rem 0;
 }
 
 .imc-calculator {
@@ -342,42 +342,104 @@ li :hover {
     padding: 1rem;
 }
 
+.body-dashboard::-webkit-scrollbar {
+    display: none;
+}
+
+.body-dashboard {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
 .dashboard {
     position: relative;
     display: flex;
+    font-family: 'Source Serif Pro', serif;
+    background-image: url(imgs/pexels-anush-gorak-1229356.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .table-dash {
-    background: chartreuse;
+    background: rgb(90, 90, 90);
+    font-weight: 300;
+    text-transform: uppercase;
+    font-family: 'Archivo Black', sans-serif;
+    border-right: 3px solid black;
+    height: 100%;
+}
+
+.table-row a {
+    color: var(--cor-bg-principal);
+}
+
+.table-row a:hover {
+    color: var(--cor-bg-neutral);
 }
 
 .table-row {
-    padding: 2em;
+    padding: 1.7em 1em 1.7em 1em;
 }
 
 .table-column {
-    border-right: 2px solid black;
     display: flex;
     flex-flow: column;
-    padding: 0 0 30.686em 0;
+    padding: 0 0 24.1em 0;
 }
 
-.dashboard i {
+.dashboard .fa-sign-out-alt {
     font-size: 3em;
     position: absolute;
     bottom: 0;
     margin: 1em;
+    color: var(--cor-bg-principal);
+}
+
+.dashboard .fa-user {
+    font-size: 3em;
+    position: absolute;
+    bottom: 2em;
+    margin: 1em;
+    color: var(--cor-bg-principal);
 }
 
 .dashboard i:hover {
     color: var(--cor-bg-neutral);
 }
 
-.dash-bar {
-    position: fixed;
-    border: 1px solid black;
-    height: 100px;
-    width: 100%;
+.dashboard .profile-icon {
+    font-size: 1px;
+    position: absolute;
+    bottom: 0;
+    margin: 1.3em;
+    color: var(--cor-bg-principal);
+}
+
+.dash-content {
+    font-weight: 500;
+    margin: 4em;
+    padding: 3em;
+    display: flex;
+    align-items: center;
+    border: 3px solid black;
+    border-radius: 30px;
+    background: var(--cor-bg-principal);
+}
+
+.instagram-media {
+    height: 45em;
+}
+
+.insta-video h1 {
+    padding: 1em;
+    font-family: 'Archivo Black', sans-serif;
+}
+
+.insta-video {
+    font-size: 2em;
+    margin: 2em;
+    width: 70%;
+    text-align: center;
 }
 
 footer {
