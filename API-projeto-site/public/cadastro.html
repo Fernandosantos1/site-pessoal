@@ -1,0 +1,81 @@
+<<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Be Fit</title>
+        <link rel="stylesheet" href="main.js">
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+
+    <body>
+        <header id="id_navbar">
+            <div class="container">
+                <h1>Be Fit</h1>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Contato</a></li>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Contato</a></li>
+                    <li><a href="">Sobre Mim</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="cadastro.html">cadastro</a></li>
+
+                </ul>
+            </div>
+        </header>
+        <div class="contato">
+            <div class="container">
+                <h1>Cadastro</h1>
+                <div class="formulario">
+                    <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+
+                        <input type="text" name="nome" class="input-padrao" autofocus="autofocus" placeholder="Nome e sobrenome" required minlength="4"><br>
+                        <input type="text" name="login" class="input-padrao" placeholder="Seu nome de usuário" required minlength="4"><br>
+                        <input type="text" name="email" class="input-padrao" placeholder="Email" required minlength="4"><br>
+                        <select name="fkBiotipo" class="input-padrao" required id="id_select_comportamentoPele">
+                            <option value="0" selected disabled>Selecione seu Biotipo:</option>
+                            <option value="1">Ectomorfo</option>
+                            <option value="2">Mesomorfo</option>
+                            <option value="3">Endomorfo</option>
+                        </select><br>
+                        <input type="password" name="senha" class="input-padrao" placeholder="Sua senha" required minlength="4"><br>
+
+
+                        <input type="submit" id="btn_entrar" value="Cadastrar" class="btn-green">
+                    </form>
+
+                    <i class="fas fa-dumbbell fa-spin" id="img_aguarde"></i>
+
+                    <div id="div_erro" style="background-color: sandybrown; color: maroon; display: none;">
+                        Erro no cadastro
+                    </div>
+
+                </div>
+                <!-- <div class="imagem-lateral">
+                    <img src="img/side-img-contato_orange.jpg">
+                </div> -->
+            </div>
+        </div>
+        <footer>
+            <div class="container">
+                <h2>Projeto Pessoal de Fernando Marques dos Santos</h2>
+                <p>RA:01211040</p>
+                <a href="https://github.com/Fernandosantos1"><i class="fab fa-github-square"></i></a>
+                <a href="https://www.linkedin.com/in/fernando-santos-25b20020b/"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </footer>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+        <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+        <script src="main.js"></script>
+
+    </body>
+
+    </html>

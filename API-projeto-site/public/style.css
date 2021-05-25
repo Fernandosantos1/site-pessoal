@@ -6,6 +6,24 @@
     --cor-bg-alert: rgb(236, 131, 32);
 }
 
+
+/* ::-webkit-scrollbar-track {
+    background-color: #D87501;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background: #D87501;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FFC13C;
+} */
+
+
+/* mudar no dia do projeto por n ter o chrome */
+
 * {
     margin: 0;
     padding: 0;
@@ -384,7 +402,33 @@ li :hover {
 .table-column {
     display: flex;
     flex-flow: column;
-    padding: 0 0 24.1em 0;
+    padding: 0 0 17.39em 0;
+}
+
+.dash-content-profile {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dash-content-profile .dash-content {
+    text-align: center;
+    width: 60%;
+}
+
+.dash-content .profile .chart-wrapper {
+    width: 1000px;
+    padding: 0;
+}
+
+.dash-content .icon-profile {
+    text-align: center;
+}
+
+.dash-content .icon-profile img {
+    border-radius: 50%;
+    width: 10em;
 }
 
 .dashboard .fa-sign-out-alt {
@@ -426,6 +470,12 @@ li :hover {
     background: var(--cor-bg-principal);
 }
 
+.logo {
+    text-align: center;
+    font-size: 2em;
+    padding: 1em;
+}
+
 .instagram-media {
     height: 45em;
 }
@@ -440,6 +490,62 @@ li :hover {
     margin: 2em;
     width: 70%;
     text-align: center;
+}
+
+.box-login {
+    padding: 13.5rem;
+    text-align: center;
+    font-size: 2em;
+}
+
+.box-login h1 {
+    margin: 1em;
+}
+
+.contato .container h1 {
+    margin: 3em 0 0 0;
+    font-size: 1.5em
+}
+
+.formulario {
+    padding: 7rem;
+}
+
+.extra {
+    text-align: center;
+    padding: .5rem;
+    font-size: 5rem;
+}
+
+#img_aguarde {
+    display: none;
+}
+
+.pag-login .container {
+    display: flex;
+    justify-content: center;
+}
+
+.input-padrao {
+    height: 3em;
+    width: 15em;
+    margin: .5em;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.btn-green {
+    padding: 1rem 2rem;
+    margin: 1em 0 2em 0;
+    color: white;
+    background-color: var(--cor-bg-neutral);
+    border-style: none;
+    border-radius: 3px;
+}
+
+.contato .container {
+    text-align: center;
+    font-size: 2em;
 }
 
 footer {

@@ -21,11 +21,38 @@
                 <li><a href="">Home</a></li>
                 <li><a href="">Contato</a></li>
                 <li><a href="">Sobre Mim</a></li>
-                <li><a href="">Login</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
             </ul>
         </div>
     </header>
+    <section class="pag-login">
+        <div class="container">
+            <div class="box-login">
+                <h1>Login</h1>
 
+
+
+                <form id="form_login" method="post" onsubmit="return entrar()">
+
+                    <input type="text" class="input-padrao" name="login" placeholder="Nome de Usuario">
+                    <br>
+                    <input type="password" class="input-padrao" name="senha" placeholder="Senha">
+                    <br>
+                    <button id="btn_entrar" class="btn-green">Entrar</button>
+                </form>
+
+                <div class="extra">
+                    <div id="div_erro" class="msg_erro">
+                    </div>
+
+                    <i class="fas fa-dumbbell fa-spin" id="img_aguarde"></i>
+                    <!--style="display: none;"-->
+
+                </div>
+            </div>
+        </div>
+    </section>
     <footer>
         <div class="container">
             <h2>Projeto Pessoal de Fernando Marques dos Santos</h2>

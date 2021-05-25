@@ -238,9 +238,9 @@ let ctx2 = document.getElementById('myChart2').getContext('2d');
 let myChart = new Chart(ctx2, {
     type: 'pie',
     data: {
-        labels: ['Saudável', 'Abaixo do Peso', 'Obeso','Obesidade Grave'],
+        labels: ['Saudável', 'Abaixo do Peso', 'Obeso', 'Obesidade Grave'],
         datasets: [{
-            data: [47, 33, 13,7],
+            data: [47, 33, 13, 7],
             backgroundColor: [
                 'rgba(54, 133, 235, 0.6)',
                 'rgba(75, 192, 192, 0.6)',
@@ -253,7 +253,7 @@ let myChart = new Chart(ctx2, {
                 'rgba(255, 206, 86, 1)',
                 'rgba(255, 80, 80, 1)'
             ],
-            
+
             borderWidth: 4
         }]
     },
@@ -270,19 +270,18 @@ let myChart = new Chart(ctx2, {
 
             fontColor: "#fff"
         },
-        
-        legend:{
-            
+
+        legend: {
+
             position: 'bottom',
-            labels:{
+            labels: {
                 fontColor: "#fff"
             }
-        }
-,
+        },
         scales: {
             y: {
                 beginAtZero: true,
-                
+
             }
         }
     }
@@ -354,20 +353,144 @@ calculate = () => {
         if (imc <= 18.5) {
             imc_result.innerHTML = `${imc}, Você está abaixo do peso isso não é saudável`;
 
-        } else if (imc <= 25){
+        } else if (imc <= 25) {
 
             imc_result.innerHTML = `${imc}, Você está saudável, parabéns`;
 
-        } else if (imc <= 30){
+        } else if (imc <= 30) {
 
-            imc_result.innerHTML = `${imc}, Você está obeso isso não é saudável`; 
+            imc_result.innerHTML = `${imc}, Você está obeso isso não é saudável`;
 
         } else {
 
             imc_result.innerHTML = `${imc}, Você está com obesidade grave isso não é saudável, tome cuidado`;
 
         }
-                
+
     }
 }
 
+function entrar() {
+    aguardar();
+    var formulario = new URLSearchParams(new FormData(form_login));
+    fetch("/usuarios/autenticar", {
+        method: "POST",
+        body: formulario
+    }).then(resposta => {
+
+        if (resposta.ok) {
+
+            resposta.json().then(json => {
+
+                sessionStorage.login_usuario_meuapp = json.login;
+                sessionStorage.nome_usuario_meuapp = json.nome;
+
+                window.location.href = 'dashboard-peitoral.html';
+            });
+
+        } else {
+
+            console.log('Erro de login!');
+
+            resposta.text().then(texto => {
+                console.error(texto);
+                finalizar_aguardar(texto);
+            });
+        }
+    });
+
+    return false;
+}
+
+function aguardar() {
+    btn_entrar.disabled = true;
+    img_aguarde.style.visibility = 'visible';
+    div_erro.style.visibility = 'hidden';
+}
+
+function finalizar_aguardar(resposta) {
+    btn_entrar.disabled = false;
+    img_aguarde.style.visibility = 'hidden';
+    div_erro.style.visibility = 'visible';
+    div_erro.innerHTML = resposta;
+}
+
+function cadastrar() {
+    aguardar();
+    var formulario = new URLSearchParams(new FormData(form_cadastro));
+    fetch("/usuarios/cadastrar", {
+        method: "POST",
+        body: formulario
+    }).then(function(response) {
+
+        if (response.ok) {
+
+            window.location.href = 'login.html';
+
+        } else {
+
+            console.log('Erro de cadastro!');
+            response.text().then(function(resposta) {
+                div_erro.innerHTML = resposta;
+            });
+            finalizar_aguardar();
+        }
+    });
+
+    return false;
+}
+
+function aguardar() {
+    btn_entrar.disabled = true;
+    img_aguarde.style.display = 'block';
+    div_erro.style.display = 'none';
+}
+
+function finalizar_aguardar() {
+    btn_entrar.disabled = false;
+    img_aguarde.style.display = 'none';
+    div_erro.style.display = 'block';
+}
+let login_usuario;
+let nome_usuario;
+
+function redirecionar_login() {
+    window.location.href = 'login.html';
+}
+
+function verificar_autenticacao() {
+    login_usuario = sessionStorage.login_usuario_meuapp;
+    nome_usuario = sessionStorage.nome_usuario_meuapp;
+
+    if (login_usuario == undefined) {
+        redirecionar_login();
+    } else {
+        b_usuario.innerHTML = nome_usuario;
+        validar_sessao();
+    }
+
+}
+
+function logoff() {
+    finalizar_sessao();
+    sessionStorage.clear();
+    redirecionar_login();
+}
+
+function validar_sessao() {
+    fetch(`/usuarios/sessao/${login_usuario}`, { cache: 'no-store' })
+        .then(resposta => {
+            if (resposta.ok) {
+                resposta.text().then(texto => {
+                    console.log('Sessão :) ', texto);
+                });
+            } else {
+                console.error('Sessão :.( ');
+                logoff();
+            }
+        });
+}
+
+function finalizar_sessao() {
+    fetch(`/usuarios/sair/${login_usuario}`, { cache: 'no-store' });
+}
