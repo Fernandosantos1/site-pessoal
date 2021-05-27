@@ -385,7 +385,7 @@ function entrar() {
                 sessionStorage.login_usuario_meuapp = json.login;
                 sessionStorage.nome_usuario_meuapp = json.nome;
 
-                window.location.href = 'dashboard-peitoral.html';
+                window.location.href = 'dashboard-profile.html';
             });
 
         } else {
