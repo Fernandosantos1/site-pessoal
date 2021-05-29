@@ -26,54 +26,54 @@ let principal = [{
 ];
 
 let box1 = [{
-        text: 'blablabla1',
+        text: 'Se seu objetivo é emagrecer com saúde, fazer atividade física é essencial! O exercício físico regular aumenta a taxa metabólica.',
         imgSrc: 'imgs/Icons/Body/weight-loss.svg',
     },
     {
-        text: 'blablabla2',
+        text: 'Gorduras são indispensáveis para o bom funcionamento do corpo. Obtidas de fonte animal ou vegetal.',
         imgSrc: 'imgs/Icons/Diet/avocado.svg',
     },
     {
-        text: 'blablabla3',
+        text: 'O exercício físico pode ser um verdadeiro impulsionador da energia para pessoas saudáveis e também para as que sofrem de várias condições médicas.',
         imgSrc: 'imgs/Icons/Mind/carregando.svg',
     }
 ];
 let box2 = [{
-        text: 'blablabla1',
+        text: 'O exercício físico regular desempenha um papel vital na construção e manutenção de músculos e ossos fortes.',
         imgSrc: 'imgs/Icons/Body/muscle.svg'
     },
     {
-        text: 'blablabla2',
+        text: 'os alimentos ricos em proteínas e que possuem baixo teor de carboidratos, como carnes magras, peixe, ovo, presunto, presunto de peru',
         imgSrc: 'imgs/Icons/Diet/boiled-egg.svg'
     },
     {
-        text: 'blablabla3',
+        text: 'A prática esportiva fará com o corpo passe a receber hormônios que garantem nossa disposição, bem-estar e produtividade.',
         imgSrc: 'imgs/Icons/Mind/foco.svg'
     }
 ];
 let box3 = [{
-        text: 'blablabla1',
+        text: 'a irrigação do coração feita através das artérias coronárias ficam mais abundantes melhorando o seu funcionamento.',
         imgSrc: 'imgs/Icons/Body/smartphone.svg'
     },
     {
-        text: 'blablabla2',
+        text: 'Os carboidratos são nutrientes muito importantes para o nosso organismo. São considerados os alimentos energéticos.',
         imgSrc: 'imgs/Icons/Diet/porridge.svg'
     },
     {
-        text: 'blablabla3',
+        text: 'O sistema imunológico costuma ser severamente prejudicado por transtornos psicológicos, facilitando doenças ocasionais, como resfriados, dores de cabeça e problemas do trato intestinal.',
         imgSrc: 'imgs/Icons/Mind/opcoes.svg'
     }
 ];
 let box4 = [{
-        text: 'blablabla1',
+        text: 'O gasto de energia durante o exercício físico estimula os processos de recuperação durante o sono.',
         imgSrc: 'imgs/Icons/Body/sleeping.svg'
     },
     {
-        text: 'blablabla2',
+        text: 'Periodização da dieta pode ser a chave para alcançar mais rapidamente o objetivo da redução de peso e da melhora da composição corporal.',
         imgSrc: 'imgs/Icons/Diet/planning.svg'
     },
     {
-        text: 'blablabla3',
+        text: 'Ao estimular a oxigenação do cérebro, as neurotransmissões são favorecidas. Também estimula a memória e afasta pensamentos ruins.',
         imgSrc: 'imgs/Icons/Mind/produtividade.svg'
     }
 ];
@@ -415,27 +415,50 @@ function finalizar_aguardar(resposta) {
     div_erro.innerHTML = resposta;
 }
 
+let nome = document.getElementById('cadNome');
+let email = document.getElementById('cadEmail');
+let login = document.getElementById('cadLogin');
+let senha = document.getElementById('cadSenha');
+
 function cadastrar() {
     aguardar();
     var formulario = new URLSearchParams(new FormData(form_cadastro));
-    fetch("/usuarios/cadastrar", {
-        method: "POST",
-        body: formulario
-    }).then(function(response) {
 
-        if (response.ok) {
+    if (nome.value == '' || nome.length < 4 || nome == undefined) {
 
-            window.location.href = 'login.html';
+        nome.value = '';
+        nome.placeholder = 'Digite um nome válido';
+        nome.style.borderColor = '#f00';
+        nome.style.color = '#f00';
 
-        } else {
+        setTimeout(() => {
 
-            console.log('Erro de cadastro!');
-            response.text().then(function(resposta) {
-                div_erro.innerHTML = resposta;
-            });
-            finalizar_aguardar();
-        }
-    });
+            nome.placeholder = 'Nome e sobrenome';
+            nome.style.borderColor = '#000';
+            nome.style.color = '#000';
+
+        }, 2000);
+    } else if (condition) {
+
+    }
+    // fetch("/usuarios/cadastrar", {
+    //     method: "POST",
+    //     body: formulario
+    // }).then(function(response) {
+
+    //     if (response.ok) {
+
+    //         window.location.href = 'login.html';
+
+    //     } else {
+
+    //         console.log('Erro de cadastro!');
+    //         response.text().then(function(resposta) {
+    //             div_erro.innerHTML = resposta;
+    //         });
+    //         finalizar_aguardar();
+    //     }
+    // });
 
     return false;
 }
@@ -451,6 +474,7 @@ function finalizar_aguardar() {
     img_aguarde.style.display = 'none';
     div_erro.style.display = 'block';
 }
+
 let login_usuario;
 let nome_usuario;
 

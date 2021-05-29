@@ -76,7 +76,7 @@
             }
             
             .home .container h1 {
-                padding: 4em 0 0 0;
+                padding: 3.5em 0 0 0;
                 color: white;
                 text-transform: uppercase;
                 font-size: 5em;
@@ -119,6 +119,7 @@
             
             .benefits .container .box-itens {
                 display: flex;
+                align-items: center;
                 flex-flow: row wrap;
                 width: 50%;
                 margin: 10rem 0 10rem 0;
@@ -140,6 +141,10 @@
                 display: flex;
                 flex-flow: row wrap;
                 justify-content: space-between;
+            }
+            
+            .box-js {
+                text-align: center;
             }
             
             .benefits .container h1 {
@@ -242,7 +247,7 @@
             
             .chart-wrapper {
                 width: 30em;
-                padding: 11rem 0 14rem 0;
+                padding: 15rem 0 15rem 0;
             }
             
             .imc-calculator {
@@ -343,14 +348,18 @@
             }
             
             .biotypes-box {
+                display: flex;
+                flex-flow: column;
+                align-items: center;
+                justify-content: space-between;
                 text-align: center;
-                width: 30%;
+                width: 25rem;
                 margin: auto;
                 padding: 19rem 0 9rem 0;
             }
             
             .biotypes-box img {
-                width: 40%;
+                width: 7em;
             }
             
             .biotypes-box h2 {
@@ -457,6 +466,7 @@
             }
             
             .dash-content {
+                width: 80%;
                 font-weight: 500;
                 margin: 4em;
                 padding: 3em;
@@ -465,6 +475,10 @@
                 border: 3px solid black;
                 border-radius: 30px;
                 background: var(--cor-bg-principal);
+            }
+            
+            .dash-content p {
+                text-align: justify;
             }
             
             .logo {
@@ -564,6 +578,14 @@
                 .contato .container h1 {
                     margin: 3em 0 0 0;
                     font-size: 1.5em
+                }
+                .biotypes-box {
+                    padding: 15rem 0 10rem 0;
+                }
+                .dash-content2 {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                 }
             }
             

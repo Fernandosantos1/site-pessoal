@@ -15,7 +15,7 @@
         <div class="container">
             <h1><a href="index.html">Be Fit</a></h1>
             <ul>
-                <li><a href="#home">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="#benefits">Benefícios</a></li>
                 <li><a href="#sobre_mim">Sobre Mim</a></li>
                 <li><a href="#evolutionevolution">Evolução</a></li>
@@ -31,19 +31,19 @@
             <div class="formulario">
                 <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
 
-                    <input type="text" name="nome" class="input-padrao" autofocus="autofocus" placeholder="Nome e sobrenome" required minlength="4"><br>
-                    <input type="text" name="login" class="input-padrao" placeholder="Seu nome de usuário" required minlength="4"><br>
-                    <input type="text" name="email" class="input-padrao" placeholder="Email" required minlength="4"><br>
+                    <input id="cadNome" autocomplete="off" type="text" name="nome" class="input-padrao" autofocus="autofocus" placeholder="Nome e sobrenome"><br>
+                    <input id="cadLogin" autocomplete="off" type="text" name="login" class="input-padrao" placeholder="Seu nome de usuário"><br>
+                    <input id="cadEmail" autocomplete="off" type="text" name="email" class="input-padrao" placeholder="Email"><br>
                     <select name="fkBiotipo" class="input-padrao" required id="id_select_comportamentoPele">
                             <option value="0" selected disabled>Selecione seu Biotipo:</option>
                             <option value="1">Ectomorfo</option>
                             <option value="2">Mesomorfo</option>
                             <option value="3">Endomorfo</option>
                         </select><br>
-                    <input type="password" name="senha" class="input-padrao" placeholder="Sua senha" required minlength="4"><br>
+                    <input id="cadSenha" autocomplete="off" type="password" name="senha" class="input-padrao" placeholder="Sua senha"><br>
 
 
-                    <input type="submit" id="btn_entrar" value="Cadastrar" class="btn-green">
+                    <input autocomplete="off" type="submit" id="btn_entrar" value="Cadastrar" class="btn-green">
                 </form>
 
                 <i class="fas fa-dumbbell fa-spin" id="img_aguarde"></i>

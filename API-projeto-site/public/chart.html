@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .chart-wrapper {
+        width: 60%;
+    }
+</style>
+
+<body>
+
+    <div class="chart-wrapper">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
+<script>
+    let ctx = document.getElementById('myChart');
+
+    let meuGrafico = new Chart(ctx, {
+
+        type: 'line',
+
+
+        data: {
+
+            labels: ["1", "2", "3", "4", "5", ],
+
+            datasets: [
+
+                {
+
+                    label: " Gordura em Porcentagem",
+
+                    data: [28, 25, 17, 30, 18],
+
+                    borderWidth: 5,
+
+
+                    borderColor: 'rgba(255, 206, 86, 0.6)',
+
+                    backgroundColor: 'transparent',
+                },
+            ]
+        }
+    })
+
+
+
+
+    Chart.defaults.global.defaultFontColor = "#111";
+
+    setInterval(function() {
+        let teste = parseInt(Math.random() * 100)
+
+        meuGrafico.data.datasets[0].data.push(teste);
+        meuGrafico.data.datasets[0].data.shift()
+        meuGrafico.update()
+
+    }, 1000);
+</script>
