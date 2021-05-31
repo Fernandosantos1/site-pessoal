@@ -206,7 +206,7 @@
                 display: flex;
                 justify-content: flex-start;
                 align-items: center;
-                padding: 20rem 0 15rem 0;
+                padding: 25rem 0 22rem 0;
             }
             
             .sobre-mim .container h1 {
@@ -587,6 +587,29 @@
                     align-items: center;
                     justify-content: center;
                 }
+            }
+            
+            .helpdesk {
+                position: relative;
+            }
+            
+            .helpdesk .container {
+                font-size: 2em;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .helpdesk .container iframe {
+                margin: 5em 0 2em 0;
+            }
+            
+            .helpdesk .container h1 {
+                position: absolute;
+                left: 1%;
+                right: 1%;
+                top: 2rem;
+                text-align: center;
             }
             
             footer {

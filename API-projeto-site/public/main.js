@@ -415,50 +415,99 @@ function finalizar_aguardar(resposta) {
     div_erro.innerHTML = resposta;
 }
 
-let nome = document.getElementById('cadNome');
-let email = document.getElementById('cadEmail');
-let login = document.getElementById('cadLogin');
-let senha = document.getElementById('cadSenha');
+
 
 function cadastrar() {
     aguardar();
     var formulario = new URLSearchParams(new FormData(form_cadastro));
 
-    if (nome.value == '' || nome.length < 4 || nome == undefined) {
 
-        nome.value = '';
-        nome.placeholder = 'Digite um nome válido';
-        nome.style.borderColor = '#f00';
-        nome.style.color = '#f00';
+
+    if (document.getElementById('cadNome').value == '' || document.getElementById('cadNome').length < 4 || document.getElementById('cadNome') == undefined) {
+
+        document.getElementById('cadNome').value = '';
+        document.getElementById('cadNome').placeholder = 'Digite um nome válido';
+        document.getElementById('cadNome').style.borderColor = '#f00';
+        document.getElementById('cadNome').style.color = '#f00';
 
         setTimeout(() => {
 
-            nome.placeholder = 'Nome e sobrenome';
-            nome.style.borderColor = '#000';
-            nome.style.color = '#000';
+            document.getElementById('cadNome').placeholder = 'Nome e sobrenome';
+            document.getElementById('cadNome').style.borderColor = '#000';
+            document.getElementById('cadNome').style.color = '#000';
 
-        }, 2000);
-    } else if (condition) {
+        }, 1000);
+        finalizar_aguardar();
 
+    } else if (document.getElementById('cadLogin').value == '' || document.getElementById('cadLogin').length < 4 || document.getElementById('cadLogin') == undefined) {
+
+        document.getElementById('cadLogin').value = '';
+        document.getElementById('cadLogin').placeholder = 'Digite um Login válido';
+        document.getElementById('cadLogin').style.borderColor = '#f00';
+        document.getElementById('cadLogin').style.color = '#f00';
+
+        setTimeout(() => {
+
+            document.getElementById('cadLogin').placeholder = 'Seu nome de usuário';
+            document.getElementById('cadLogin').style.borderColor = '#000';
+            document.getElementById('cadLogin').style.color = '#000';
+
+        }, 1000);
+        finalizar_aguardar();
+
+    } else if (document.getElementById('cadEmail').value == '' || !document.getElementById('cadEmail').value.match(/^[^\s@]+@[^\s@]+$/)) {
+
+        document.getElementById('cadEmail').value = '';
+        document.getElementById('cadEmail').placeholder = 'Digite um email válido';
+        document.getElementById('cadEmail').style.borderColor = '#f00';
+        document.getElementById('cadEmail').style.color = '#f00';
+
+        setTimeout(() => {
+
+            document.getElementById('cadEmail').placeholder = 'Email';
+            document.getElementById('cadEmail').style.borderColor = '#000';
+            document.getElementById('cadEmail').style.color = '#000';
+
+        }, 1000);
+        finalizar_aguardar();
+
+    } else if (document.getElementById('cadSenha').value == '' || document.getElementById('cadSenha').length < 6 || document.getElementById('cadSenha') == undefined) {
+
+        document.getElementById('cadSenha').value = '';
+        document.getElementById('cadSenha').placeholder = 'Digite uma senha com mais de 6 digitos';
+        document.getElementById('cadSenha').style.borderColor = '#f00';
+        document.getElementById('cadSenha').style.color = '#f00';
+
+        setTimeout(() => {
+
+            document.getElementById('cadSenha').placeholder = 'Sua senha';
+            document.getElementById('cadSenha').style.borderColor = '#000';
+            document.getElementById('cadSenha').style.color = '#000';
+
+        }, 1000);
+        finalizar_aguardar();
+
+    } else {
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function(response) {
+
+            if (response.ok) {
+
+                window.location.href = 'login.html';
+
+            } else {
+
+                console.log('Erro de cadastro!');
+                response.text().then(function(resposta) {
+                    div_erro.innerHTML = resposta;
+                });
+                finalizar_aguardar();
+            }
+        });
     }
-    // fetch("/usuarios/cadastrar", {
-    //     method: "POST",
-    //     body: formulario
-    // }).then(function(response) {
 
-    //     if (response.ok) {
-
-    //         window.location.href = 'login.html';
-
-    //     } else {
-
-    //         console.log('Erro de cadastro!');
-    //         response.text().then(function(resposta) {
-    //             div_erro.innerHTML = resposta;
-    //         });
-    //         finalizar_aguardar();
-    //     }
-    // });
 
     return false;
 }
@@ -466,13 +515,13 @@ function cadastrar() {
 function aguardar() {
     btn_entrar.disabled = true;
     img_aguarde.style.display = 'block';
-    div_erro.style.display = 'none';
+
 }
 
 function finalizar_aguardar() {
     btn_entrar.disabled = false;
     img_aguarde.style.display = 'none';
-    div_erro.style.display = 'block';
+
 }
 
 let login_usuario;
