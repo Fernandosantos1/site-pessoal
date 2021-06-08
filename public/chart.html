@@ -32,7 +32,7 @@
 
     let meuGrafico = new Chart(ctx, {
 
-        type: 'line',
+        type: 'bar',
 
 
         data: {
@@ -43,7 +43,7 @@
 
                 {
 
-                    label: " Gordura em Porcentagem",
+                    label: "teste",
 
                     data: [28, 25, 17, 30, 18],
 
@@ -63,6 +63,8 @@
 
     Chart.defaults.global.defaultFontColor = "#111";
 
+    let contador = 6
+
     setInterval(function() {
         let teste = parseInt(Math.random() * 100)
 
@@ -70,5 +72,9 @@
         meuGrafico.data.datasets[0].data.shift()
         meuGrafico.update()
 
-    }, 1000);
+        meuGrafico.data.labels.push(contador++);
+        meuGrafico.data.labels.shift()
+
+
+    }, 1500);
 </script>
